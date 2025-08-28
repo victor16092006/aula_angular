@@ -1,1 +1,17 @@
-<p>diretiva works!</p>
+<div class="centralizacao">
+<button (click)="toggleLista()">
+  {{ mostrarLista ? 'Esconder Lista' : 'Mostrar Lista' }}
+</button>
+
+<ul *ngIf="mostrarLista" [ngStyle]="{ 'font-size.px': fontSize }">
+  <li *ngFor="let aluno of alunos"
+      [ngClass]="{ 'ativo': aluno.ativo, 'inativo': !aluno.ativo }">
+    {{ aluno.id }} - {{ aluno.nome }}
+  </li>
+</ul>
+
+<div *ngIf="mostrarLista">
+  <button (click)="aumentarFonte()">+</button>
+  <button (click)="diminuirFonte()">-</button>
+</div>
+</div>
