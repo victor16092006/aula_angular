@@ -1,21 +1,17 @@
-import { NgModule, provideBrowserGlobalErrorListeners, provideZonelessChangeDetection } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
-import { AppRoutingModule } from './app-routing-module';
-import { App } from './app';
+import { ProdutosRoutingModule } from './produtos-routing-module';
+import { Estoque } from './estoque/estoque';
+
 
 @NgModule({
   declarations: [
-    App
+    Estoque
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideZonelessChangeDetection()
-  ],
-  bootstrap: [App]
+    CommonModule,
+    ProdutosRoutingModule
+  ]
 })
-export class AppModule { }
+export class ProdutosModule { }
